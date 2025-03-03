@@ -73,7 +73,7 @@
                     </a>
                 </li>
                 <li class="h-32 w-32 mr-10 flex items-center">
-                    <a href="https://www.npmjs.com/settings/lchao/packages"
+                    <a href="https://www.npmjs.com/package/lchao-cli"
                        target="_blank">
                         <img
                                 class="h-28"
