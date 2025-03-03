@@ -1,5 +1,5 @@
 <template>
-    <div class="App">
+    <div class="App flex flex-col h-100vh">
         <HeaderView></HeaderView>
         <RouterView></RouterView>
     </div>

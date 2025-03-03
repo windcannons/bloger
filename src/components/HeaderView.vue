@@ -61,11 +61,16 @@
                     :to="`/myProject`">
                     开发项目
                 </RouterLink>
-                <a href="/web前端 刘超 17581724627.pdf"
-                   target="_blank"
-                   class="text-white text-18 mr-32 flex-shrink-0">
+                <RouterLink
+                    class="text-white text-18 mr-32 flex-shrink-0"
+                    :to="`/resume`">
                     我的简历
-                </a>
+                </RouterLink>
+                <!--<a href="/web前端 刘超 17581724627.pdf"-->
+                <!--   target="_blank"-->
+                <!--   class="text-white text-18 mr-32 flex-shrink-0">-->
+                <!--    我的简历-->
+                <!--</a>-->
             </div>
         </div>
     </div>

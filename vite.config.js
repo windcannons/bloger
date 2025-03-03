@@ -18,10 +18,10 @@ export default defineConfig({
         minify: "terser",
         terserOptions: {
             // 配置打包完取消打印和debugger
-            compress: {
-                drop_console: true,
-                drop_debugger: true
-            }
+            //compress: {
+            //    drop_console: true,
+            //    drop_debugger: true
+            //}
         }
     },
     resolve: {
