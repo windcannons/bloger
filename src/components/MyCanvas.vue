@@ -1,9 +1,7 @@
 <!--MyCanvas-->
 <template>
-    <div class="index">
         <div
             class="waves"></div>
-    </div>
 </template>
 
 <script
