@@ -57,10 +57,15 @@
                     </template>
                 </el-dropdown>
                 <RouterLink
-                        class="text-white text-18 mr-32 flex-shrink-0"
-                        :to="`/myProject`">
+                    class="text-white text-18 mr-32 flex-shrink-0"
+                    :to="`/myProject`">
                     开发项目
                 </RouterLink>
+                <a href="/web前端 刘超 17581724627.pdf"
+                   target="_blank"
+                   class="text-white text-18 mr-32 flex-shrink-0">
+                    我的简历
+                </a>
             </div>
         </div>
     </div>
@@ -69,8 +74,8 @@
 <script
     setup>
 import {
-    onMounted,
-    computed
+    computed,
+    onMounted
 } from "vue";
 import bus
     from "../bus";
