@@ -1,5 +1,6 @@
 <template>
     <el-scrollbar
+        ref="scrollbar"
         class="bg-#f5f5f5 docs"
             :height="`${windowHeight - 65}px`">
         <div class="w-1440 mx-a flex ">
@@ -96,6 +97,25 @@ watch(() => route.params.docType, updateMarkdown,{
 const scrollTo = (id) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({behavior: 'smooth'});
+};
+
+// 监听路由变化，更新 Markdown 内容并滚动到顶部
+watch(() => route.params.docType, async (newVal, oldVal) => {
+    if (newVal !== oldVal) {
+        await updateMarkdown();
+        scrollToTop(); // 路由变化后滚动到顶部
+    }
+}, {
+    deep: true,
+    immediate: true
+});
+
+// 滚动到顶部的方法
+const scrollToTop = () => {
+    const scrollbarWrap = document.querySelector('.docs .el-scrollbar__wrap');
+    if (scrollbarWrap) {
+        scrollbarWrap.scrollTop = 0; // 将滚动条滚动到顶部
+    }
 };
 </script>
 

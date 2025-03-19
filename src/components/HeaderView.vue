@@ -11,8 +11,13 @@
             </div>
             <div class="flex items-center">
                 <RouterLink
+                    class="text-white text-18 mr-32 flex-shrink-0"
+                    to="/">
+                    我的工作
+                </RouterLink>
+                <RouterLink
                         class="text-white text-18 mr-32 flex-shrink-0"
-                        to="/">
+                        to="/my">
                     自我介绍
                 </RouterLink>
                 <el-dropdown

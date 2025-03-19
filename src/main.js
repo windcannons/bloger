@@ -1,6 +1,5 @@
 // 样式文件引入
 import './assets/main.less'
-import './assets/font/font.less'
 import 'swiper/css'
 import 'swiper/swiper-bundle.css'
 import 'virtual:uno.css'

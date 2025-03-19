@@ -30,18 +30,20 @@
                 <li>
                     名族：<span>汉族</span>
                 </li>
-                <li>
+                <li class="copy">
                     手机：
                     <span>
                         <a
-                                href="tel:17581724627">17581724627
+                            href="tel:17581724627">17581724627
                     </a>
                     </span>
                 </li>
-                <li @click="copyText('lc2717741632')" class="cursor-pointer">
+                <li @click="copyText('lc2717741632')"
+                    class="cursor-pointer copy">
                     微信：<span>lc2717741632</span>
                 </li>
-                <li @click="copyText('2717741632@qq.com')" class="cursor-pointer">
+                <li @click="copyText('2717741632@qq.com')"
+                    class="cursor-pointer copy">
                     邮箱：<span>2717741632@qq.com</span>
                 </li>
                 <li>
@@ -120,15 +122,24 @@ import {
       color: #828282;
       margin-left: 5px;
 
-      a {
-        color: #828282;
+        a {
+            color: #828282;
 
-        &:hover {
-          color: #828282;
+            &:hover {
+                color: #828282;
+            }
         }
-      }
     }
+
   }
+
+    .copy:hover {
+        color: orange;
+
+        span {
+            color: orange;
+        }
+    }
 }
 
 .icons {
@@ -146,27 +157,27 @@ import {
     position: relative;
     cursor: pointer;
 
-    img {
-      width: 88px;
-      height: 88px;
-      position: absolute;
-      top: 120%;
-      left: -5px;
-      transition: .3s;
-      opacity: 0;
-    }
+      img {
+          width: 88px;
+          height: 88px;
+          position: absolute;
+          top: 120%;
+          left: -5px;
+          transition: .3s;
+          opacity: 0;
+      }
 
-    &:hover img {
-      opacity: 1;
-    }
+      &:hover img {
+          opacity: 1;
+      }
 
-    &:nth-child(1) {
-      background-position: -64px, 0;
-    }
+      &:nth-child(1) {
+          background-position: -64px, 0;
+      }
 
-    &:nth-child(2) {
-      background-position: 0, 0;
-    }
+      &:nth-child(2) {
+          background-position: 0, 0;
+      }
   }
 }
 </style>

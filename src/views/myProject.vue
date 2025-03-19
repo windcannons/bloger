@@ -67,6 +67,68 @@
         <li class="flex items-center justify-between h-500">
             <div class="h-full overflow-hidden w-45%" v-scroll>
                 <img class="w-full"
+                     src="@/assets/object/shouban.png"
+                     alt="">
+            </div>
+            <div class="flex-1 pl-5%">
+                <h2 class="mb-10 text-30 tracking-1">
+                    手办官网</h2>
+                <p class="mb-10">
+                    <span class="font-800">链接：</span>
+                    <a class="text-sky"
+                       href="https://www.likefigure.com"
+                       target="_blank">https://www.likefigure.com</a>
+                </p>
+                <p class="mb-10">
+                    <span class="font-800">项目技术：</span>
+                    vue3、vite、uview
+                    Plus
+                </p>
+                <p class="mb-10">
+                    <span class="font-800">项目职责：</span>
+                    <br>
+                    1、负责项目搭建与页面绘制；<br>
+                    2、添加操作动画反馈让项目更精致；<br>
+                    3、配置谷歌登录并与解决登录后准确回到未登录时访问的页面；<br>
+                    4、配置后台单/多图片上传自动增加水印与图片比例判断；<br>
+                    5、配置商品分享到Facebook、Twitter、微信；<br>
+                    6、配置页面布局实现大/小屏幕电脑完美展示；
+                </p>
+            </div>
+        </li>
+        <li class="flex items-center justify-between h-500">
+            <div class="h-full overflow-hidden w-45%" v-scroll>
+                <img class="w-full"
+                     src="@/assets/object/ybbe.png"
+                     alt="">
+            </div>
+            <div class="flex-1 pl-5%">
+                <h2 class="mb-10 text-30 tracking-1">
+                    拔俗官网</h2>
+                <p class="mb-10">
+                    <span class="font-800">链接：</span>
+                    <a class="text-sky"
+                       href="https://www.ybbe.com/"
+                       target="_blank">https://www.ybbe.com</a>
+                </p>
+                <p class="mb-10">
+                    <span class="font-800">项目技术：</span>
+                    nuxt2、Ant Design、swiper、cheerio
+                </p>
+                <p class="mb-10">
+                    <span class="font-800">项目职责：</span>
+                    <br>
+                    1、搭建项目并优化编译后项目结构，绘制响应式页面；<br>
+                    2、针对图片、链接等标签进行有利于seo写法；<br>
+                    3、进行接口服务端查询实现内容可被抓取<br>
+                    4、配置robots.txt以及站点地图并进行上线测试；<br>
+                    5、登录百度站长进行提交站点地图并不断维护网站<br>
+                </p>
+            </div>
+        </li>
+        <li class="flex items-center justify-between h-500">
+            <div class="h-full overflow-hidden w-45%" v-scroll>
+                <img class="w-full"
                      src="@/assets/object/yjr.png"
                      alt="">
             </div>
@@ -87,38 +149,6 @@
                     4、添加各种操作动画，让项目操作更丝滑；<br>
                     5、封装统一跳转与触底加载、文字溢出省略、防抖节流等方法，实现代码简洁开发高效；<br>
                     6、检验项目并提交上线；
-                </p>
-            </div>
-        </li>
-        <li class="flex items-center justify-between h-500">
-           <div class="h-full overflow-hidden w-45%" v-scroll>
-               <img class="w-full"
-                    src="@/assets/object/shouban.png"
-                    alt="">
-           </div>
-            <div class="flex-1 pl-5%">
-                <h2 class="mb-10 text-30 tracking-1">
-                    手办官网</h2>
-                <p class="mb-10">
-                    <span class="font-800">链接：</span>
-                    <a class="text-sky"
-                       href="https://www.likefigure.com"
-                       target="_blank">https://www.likefigure.com</a>
-                </p>
-                <p class="mb-10">
-                    <span class="font-800">项目技术：</span>
-                    Uni-app、vue3、vite、uview
-                    Plus
-                </p>
-                <p class="mb-10">
-                    <span class="font-800">项目职责：</span>
-                    <br>
-                    1、负责项目搭建与页面绘制；<br>
-                    2、添加操作动画反馈让项目更精致；<br>
-                    3、配置谷歌登录并与解决登录后准确回到未登录时访问的页面；<br>
-                    4、配置后台单/多图片上传自动增加水印与图片比例判断；<br>
-                    5、配置商品分享到Facebook、Twitter、微信；<br>
-                    6、配置页面布局实现大/小屏幕电脑完美展示；
                 </p>
             </div>
         </li>
