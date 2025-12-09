@@ -11,13 +11,8 @@
             </div>
             <div class="flex items-center">
                 <RouterLink
-                    class="text-white text-18 mr-32 flex-shrink-0"
-                    to="/">
-                    我的工作
-                </RouterLink>
-                <RouterLink
                         class="text-white text-18 mr-32 flex-shrink-0"
-                        to="/my">
+                        to="/">
                     自我介绍
                 </RouterLink>
                 <el-dropdown
@@ -66,6 +61,11 @@
                     :to="`/myProject`">
                     开发项目
                 </RouterLink>
+                <!--<RouterLink-->
+                <!--    class="text-white text-18 mr-32 flex-shrink-0"-->
+                <!--    to="/">-->
+                <!--    我的工作-->
+                <!--</RouterLink>-->
                 <!--<RouterLink-->
                 <!--    class="text-white text-18 mr-32 flex-shrink-0"-->
                 <!--    :to="`/resume`">-->

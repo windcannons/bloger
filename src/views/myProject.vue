@@ -45,8 +45,8 @@
                 <p class="mb-10">
                     <span class="font-800">链接：</span>
                     <a class="text-sky"
-                       href="http://47.100.213.227:9090/"
-                       target="_blank">http://47.100.213.227:9090/</a>
+                       href="http://47.100.213.227:9090"
+                       target="_blank">http://47.100.213.227:9090</a>
                 </p>
                 <p class="mb-10">
                     <span class="font-800">项目技术：</span>
@@ -201,6 +201,43 @@
                 </p>
             </div>
         </li>
+        <li class="flex items-center justify-between h-500">
+            <div class="h-full overflow-hidden w-45%" v-scroll>
+                <img class="w-full"
+                     src="@/assets/object/sf.png"
+                     alt="">
+            </div>
+            <div class="flex-1 pl-5%">
+                <h2 class="mb-10 text-30 tracking-1">
+                    四方支付平台</h2>
+                <div class="mb-10 flex">
+                    <span class="font-800">链接：</span>
+                    <p><span class="text12 font-800">管理端：</span>
+                        <a class="text-sky"
+                           href="https://payadmin.wwux.cn"
+                           target="_blank">https://payadmin.wwux.cn</a>
+                        <br>
+                        <span class="text12 font-800">商户端：</span>
+                        <a class="text-sky"
+                           href="https://paymer.wwux.cn"
+                           target="_blank">https://paymer.wwux.cn</a>
+                    </p>
+                </div>
+                <p class="mb-10">
+                    <span class="font-800">项目技术：</span>
+                    vue3、element plus、Echarts、Canvas
+                </p>
+                <p class="mb-10">
+                    <span class="font-800">项目职责：</span>
+                    <br>
+                    1、负责项目的搭建与页面设计与开发；<br>
+                    2、梳理项目逻辑与接口逻辑，确保项目的进行与落地；<br>
+                    3、针对支付进行RSA进行加密，针对登录进行md5加密；<br>
+                    4、对于用户的路由权限和按钮权限进行绑定与设置；<br>
+                    5、进行商户入驻、支付、账单、权限等流程的测试并交付；<br>
+                </p>
+            </div>
+        </li>
     </ul>
 </template>
 
@@ -214,16 +251,17 @@
     lang="less">
 ul {
   li {
-    margin-bottom: 70px;
+      margin-bottom: 70px;
 
-    &:nth-child(2n) {
-      flex-direction: row-reverse;
-    }
+      &:nth-child(2n) {
+          flex-direction: row-reverse;
+      }
 
-    p {
-      font-size: 20px;
-    }
-      div:first-child{
+      p, div {
+          font-size: 20px;
+      }
+
+      div:first-child {
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       }
   }
