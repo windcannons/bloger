@@ -7,7 +7,7 @@
             </h1>
             <div class="w-200 ml-2.5 bg-#f7eccb h-5 mt--12 mb-10"></div>
             <p class="text-18 tracking-1 mb-20">
-                我的基本消息和我的自我介绍
+                我的基本信息和自我介绍
             </p>
             <h5 class="text-16 tracking-1 mb-18">
                 我是一名<span
@@ -15,7 +15,7 @@
                     class="text-orange">上海</span>。
             </h5>
             <p class="leading-30 text-16 tracking-.8 mb-10">
-                我熟练掌握vue2、vue3、nuxt3等技术进行网站小程序以及应用程序的开发。有多个官网、大屏、小程序、app开发上架维护经验。我能够熟练使用npm与git进行项目的管理，熟练运用Sass、Less、unocss等CSS预处理器进行精准的样式定制，熟练使用nuxt3进行网站开发并针对SEO从多个角度进行优化。进行npm发布包实现快速构建uniapp、vue3、nuxt3项目；快速清理仓库依赖；指令绑定本地代码与线上仓库等操作；针对不同框架进行组件、方法的可复用性封装实现项目的快速开发。
+                我熟练掌握vue2、vue3、nuxt3等技术进行网站小程序以及应用程序的开发。有多个官网、大屏、小程序、app开发上架维护经验。我能够熟练使用npm与git进行项目的管理，熟练运用Sass、Less、unocss等CSS预处理器进行精准的样式定制，熟练使用nuxt3进行网站开发并针对SEO从多个角度进行优化。进行npm发布包实现快速构建uniapp、vue3、nuxt3项目；接口请求代码的自动生成；指令绑定本地代码与线上仓库；一键切换npm镜像等操作；针对不同框架进行组件、方法的可复用性封装实现项目的快速开发。
             </p>
             <p class="mb-16 text-18 text-shadow">
                 不断学习；不断提升！</p>
@@ -74,6 +74,15 @@
                                 alt="">
                     </a>
                 </li>
+              <li class="h-32 w-32 mr-10 flex items-center">
+                <a href="https://blog.csdn.net/congenct"
+                   target="_blank">
+                  <img
+                      class="h-28"
+                      src="@/assets/csdn.png"
+                      alt="">
+                </a>
+              </li>
                 <li class="h-32 w-32 mr-10 flex items-center">
                     <a href="https://www.npmjs.com/package/lchao-cli"
                        target="_blank">

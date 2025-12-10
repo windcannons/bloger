@@ -21,6 +21,7 @@
     "pinia-plugin-persist": "^1.0.0",
     "swiper": "^8.3.0",
     "v-viewer": "^3.0.11",
+    "vue-fullpage.js": "^0.2.22",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {

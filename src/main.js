@@ -12,6 +12,8 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import 'element-plus/dist/index.css'
 import 'amfe-flexible'
+import VueFullPage from 'vue-fullpage.js'
+import 'vue-fullpage.js/dist/style.css'
 
 // 插件和工具函数引入
 import piniaPluginPersist from 'pinia-plugin-persist'
@@ -53,6 +55,9 @@ app.use(VMdPreview)
 
 // 使用 Vue Router 路由
 app.use(router)
+
+// 使用全屏滚动插件
+app.use(VueFullPage)
 
 // 全局注册自定义指令
 app.directive('isPhone', isPhone)

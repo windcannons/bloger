@@ -1,7 +1,7 @@
 <template>
-    <div class="h-64 bg-black shadow-[0px_8px_24px_rgba(149,_157,_165,_0.15)] sticky top-0 left-0 w-full z-99">
+    <div class="h-64 bg-black shadow-[0px_8px_24px_rgba(149,_157,_165,_0.15)] fixed top-0 left-0 w-full z-99">
         <div class="flex items-center justify-between w-1280 mx-a max-lg:w-full h-64 max-lg:px-50">
-            <div class="flex items-center"
+            <div class="flex items-center cursor-pointer"
                  @click="copyText('lc2717741632')">
                 <h1
                         class="myName">

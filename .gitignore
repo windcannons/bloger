@@ -27,4 +27,3 @@ coverage
 *.sln
 *.sw?
 *.zip
-/node_modules/
