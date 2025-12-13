@@ -27,7 +27,7 @@
 
     <!-- 第二屏 -->
     <div class="section">
-        <Introduction></Introduction>
+       <Introduction></Introduction>
     </div>
 
     <!-- 第三屏 -->
@@ -43,6 +43,7 @@
 import MyCanvas
   from "@/components/MyCanvas.vue";
 import {
+  nextTick,
   onMounted,
   ref
 } from "vue";
@@ -50,18 +51,16 @@ import Introduction
   from "@/components/Introduction.vue";
 import BeGoodAt
   from "@/components/BeGoodAt.vue";
-import {
-  useWindowSize
-} from '@vueuse/core';
 
 const fullpage = ref(null)
+
 // 配置选项 - 支持所有 FullPage.js 选项
 const options = ref({
   // 基础配置
   navigation: true,           // 显示导航点
   navigationPosition: 'right', // 导航点位置
   navigationColor: '#ff5f45',
-  scrollingSpeed: 1000,       // 滚动速度（毫秒）
+  scrollingSpeed: 500,       // 滚动速度（毫秒）
   easingcss3: 'ease-in-out',  // CSS3 缓动函数
 
   // 控制选项
@@ -81,7 +80,6 @@ const options = ref({
 
 const userinfo = ref('')
 const num = ref(0)
-const {height: windowHeight} = useWindowSize();
 onMounted(() => {
   let userText = " 一个勤勤恳恳、认真负责的前端开发工程师，目前居住在上海。",
       moveTime = setInterval(() => {

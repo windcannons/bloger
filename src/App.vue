@@ -15,11 +15,14 @@ import {
 import {
     useRoute
 } from "vue-router";
-
+import { useAnimationStore } from "@/stores/animation";
 
 const route = useRoute();
+const animationStore = useAnimationStore();
 
 onMounted(()=>{
+    // 每次刷新页面时，重置动画状态，让动画可以重新播放
+    animationStore.resetIntroAnim();
     console.log(
         `%c✨ 欢迎来到刘超的个人博客 ✨`,
         'color: #2196F3; font-size: 24px; font-weight: bold; background-color: #E3F2FD; padding: 15px 30px; border-radius: 10px; text-align: center;'

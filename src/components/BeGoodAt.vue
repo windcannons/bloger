@@ -1,9 +1,10 @@
 <!--BeGoodAt-->
 <template>
   <div
-      class="offer pt-64"
+      class="offer pt-88"
       id="offer"
       ref="offer"
+      :class="{'is-visible': isVisible, 'no-delay': noDelay}"
   >
     <div
         class="w">
@@ -89,6 +90,57 @@
 <script
     setup>
 
+import { onMounted, onBeforeUnmount, ref } from "vue";
+
+const offer = ref(null)
+const isVisible = ref(false)
+const noDelay = ref(false)
+let observer = null
+let delayTimer = null
+
+const createObserver = () => {
+  if (!offer.value || typeof IntersectionObserver === 'undefined') {
+    isVisible.value = true
+    noDelay.value = true
+    return
+  }
+
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        isVisible.value = true
+        if (!delayTimer && !noDelay.value) {
+          // 最后一个卡片延时 0.55s + 动画 0.6s 再留少许缓冲
+          delayTimer = setTimeout(() => {
+            noDelay.value = true
+          }, 1250)
+        }
+      } else {
+        isVisible.value = false
+      }
+    })
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -12% 0px'
+  })
+
+  observer.observe(offer.value)
+}
+
+onMounted(() => {
+  createObserver()
+})
+
+onBeforeUnmount(() => {
+  if (observer) {
+    observer.disconnect()
+    observer = null
+  }
+  if (delayTimer) {
+    clearTimeout(delayTimer)
+    delayTimer = null
+  }
+})
 </script>
 
 <style
@@ -166,7 +218,7 @@
         font-size: 15px;
         color: #828282;
         height: 77px;
-        padding: 20px 0 33px;
+        padding: 20px 0 20px;
       }
     }
 
@@ -204,11 +256,21 @@
           margin-top: 33px;
           box-shadow: 5px 5px 10px #ccc;
           border: 1px solid #e9e9e9;
-          transition: .2s;
+          opacity: 0;
+          transform: translateY(80px);
+          transition: opacity 0.6s ease,
+                      transform 0.6s cubic-bezier(0.2, 0.7, 0.35, 1.3),
+                      box-shadow 0.2s ease,
+                      top 0.25s ease;
+          transition-delay: var(--enter-delay, 0s);
           cursor: pointer;
+          position: relative;
+          top: 0;
 
           &:hover {
-            transform: translateY(-10px);
+            top: -10px;
+            transition: top 0.25s ease;
+            transition-delay: 0s;
           }
 
           img {
@@ -231,12 +293,29 @@
             text-align: center;
             font-size: 15px;
             color: #828282;
-            margin: 20px 0 33px;
+            margin: 20px 0 10px;
             min-height: 67px;
           }
         }
       }
     }
   }
+}
+
+.offer.is-visible .content ul li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.offer.is-visible .content ul li:nth-child(1) { transition-delay: 0.05s; --enter-delay: 0.05s; }
+.offer.is-visible .content ul li:nth-child(2) { transition-delay: 0.15s; --enter-delay: 0.15s; }
+.offer.is-visible .content ul li:nth-child(3) { transition-delay: 0.25s; --enter-delay: 0.25s; }
+.offer.is-visible .content ul li:nth-child(4) { transition-delay: 0.35s; --enter-delay: 0.35s; }
+.offer.is-visible .content ul li:nth-child(5) { transition-delay: 0.45s; --enter-delay: 0.45s; }
+.offer.is-visible .content ul li:nth-child(6) { transition-delay: 0.55s; --enter-delay: 0.55s; }
+
+.offer.no-delay .content ul li {
+  --enter-delay: 0s;
+  transition-delay: 0s !important;
 }
 </style>
