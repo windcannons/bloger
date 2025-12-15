@@ -24,12 +24,15 @@ export default {
             const moveUp = () => {
                 cancelAnimationFrame(animationId); // 停止任何正在进行的动画
                 const animate = () => {
-                    if (currentTop > -maxScrollDistance) {
-                        currentTop -= 4; // 向上滚动
+                    const nextTop = currentTop - 4; // 计算下一次位置
+                    // 确保不会超过最大滚动距离（图片底部到达盒子底部时停止）
+                    if (nextTop >= -maxScrollDistance) {
+                        currentTop = nextTop;
                         img.style.transform = `translateY(${currentTop}px)`;
                         animationId = requestAnimationFrame(animate); // 继续动画
                     } else {
-                        currentTop = -maxScrollDistance; // 达到顶部，停止滚动
+                        // 已达到边界，设置为精确的边界值
+                        currentTop = -maxScrollDistance;
                         img.style.transform = `translateY(${currentTop}px)`;
                         cancelAnimationFrame(animationId); // 停止动画
                     }
@@ -40,12 +43,15 @@ export default {
             const moveDown = () => {
                 cancelAnimationFrame(animationId); // 停止任何正在进行的动画
                 const animate = () => {
-                    if (currentTop < 0) {
-                        currentTop += 20; // 向下滚动
+                    const nextTop = currentTop + 20; // 计算下一次位置
+                    // 确保不会超过初始位置（图片顶部到达盒子顶部时停止）
+                    if (nextTop <= 0) {
+                        currentTop = nextTop;
                         img.style.transform = `translateY(${currentTop}px)`;
                         animationId = requestAnimationFrame(animate); // 继续动画
                     } else {
-                        currentTop = 0; // 达到底部，停止滚动
+                        // 已达到边界，设置为精确的初始位置
+                        currentTop = 0;
                         img.style.transform = `translateY(0)`;
                         cancelAnimationFrame(animationId); // 停止动画
                     }

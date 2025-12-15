@@ -108,8 +108,8 @@
                 <p class="mb-10">
                     <span class="font-800">链接：</span>
                     <a class="text-sky"
-                       href="https://www.ybbe.com/"
-                       target="_blank">https://www.ybbe.com</a>
+                       href="https://www.eilve.com"
+                       target="_blank">https://www.eilve.com</a>
                 </p>
                 <p class="mb-10">
                     <span class="font-800">项目技术：</span>
