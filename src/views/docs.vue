@@ -1,30 +1,28 @@
 <template>
-    <el-scrollbar
-        ref="scrollbar"
-        class="bg-#f5f5f5 docs"
-            :height="`${windowHeight - 65}px`">
-        <div class="w-1440 mx-a flex ">
+    <div class="bg-#f5f5f5 docs h-100%">
+        <div class="w-1440 mx-a flex h-100%">
             <el-scrollbar
                 class="fixed! top-100"
-                :height="`${windowHeight - 265}px`">
+                :height="`${windowHeight - 100}px`">
             <ul class="w-300">
                 <li v-for="item in toc"
                     class="line-clamp-1 cursor-pointer hover:text-red mb-2"
                     :key="item.id"
                     :class="`title${item.level}`"
                     @click="scrollTo(item.id)">
-                    {{
-                    item.title
-                    }}
+                    {{item.title}}
                 </li>
             </ul>
             </el-scrollbar>
-            <div class="bg-white flex-1 pl-20 pt-20 ml-300">
+            <el-scrollbar
+                ref="contentScrollbar"
+                class="docs-content bg-white flex-1 pl-20 pt-20 ml-300"
+                :height="`${windowHeight - 100}px`">
                 <v-md-preview
                     :text="markdownTxt"></v-md-preview>
-            </div>
+            </el-scrollbar>
         </div>
-    </el-scrollbar>
+    </div>
 </template>
 
 <script
@@ -44,7 +42,8 @@ import {
 import {
     ref,
     nextTick,
-    watch
+    watch,
+    onMounted
 } from "vue";
 import {
     useRoute
@@ -53,6 +52,7 @@ import {
 const {height: windowHeight} = useWindowSize();
 
 const toc = ref([]);
+const contentScrollbar = ref();
 
 const route = useRoute()
 const markdownTxt = ref('')
@@ -76,7 +76,10 @@ const updateMarkdown = async() => {
     }
 
     await nextTick();
-    const headers = document.querySelectorAll('.v-md-editor-preview h1, .v-md-editor-preview h2, .v-md-editor-preview h3, .v-md-editor-preview h4, .v-md-editor-preview h5, .v-md-editor-preview h6');
+    const previewEl = contentScrollbar.value?.wrapRef?.querySelector('.v-md-editor-preview');
+    const headers = previewEl
+        ? previewEl.querySelectorAll('h1, h2, h3, h4, h5, h6')
+        : [];
     toc.value = Array.from(headers).map((header, index) => ({
         id: `toc-${index}`,
         title: header.textContent || '',
@@ -88,15 +91,18 @@ const updateMarkdown = async() => {
     });
 }
 
-// 监听路由变化，当路由参数变化时更新 markdownTxt
-watch(() => route.params.docType, updateMarkdown,{
-    deep:true,
-    immediate:true
-})
-
 const scrollTo = (id) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({behavior: 'smooth'});
+    const wrap = contentScrollbar.value?.wrapRef;
+    if (!wrap)
+        return;
+    const element = wrap.querySelector(`#${id}`);
+    if (!element)
+        return;
+    const offset = element.getBoundingClientRect().top - wrap.getBoundingClientRect().top + wrap.scrollTop;
+    wrap.scrollTo({
+        top: offset - 12,
+        behavior: 'smooth'
+    });
 };
 
 // 监听路由变化，更新 Markdown 内容并滚动到顶部
@@ -107,37 +113,48 @@ watch(() => route.params.docType, async (newVal, oldVal) => {
     }
 }, {
     deep: true,
-    immediate: true
+    immediate: false
 });
 
 // 滚动到顶部的方法
 const scrollToTop = () => {
-    const scrollbarWrap = document.querySelector('.docs .el-scrollbar__wrap');
-    if (scrollbarWrap) {
-        scrollbarWrap.scrollTop = 0; // 将滚动条滚动到顶部
+    const wrap = contentScrollbar.value?.wrapRef;
+    if (wrap) {
+        wrap.scrollTop = 0; // 将滚动条滚动到顶部
     }
 };
+
+onMounted(async () => {
+    await updateMarkdown();
+    scrollToTop();
+});
 </script>
 
 <style
     scoped lang="less">
 .title1{
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: 0;
 }
 .title2{
-    font-size: 15px;
-    padding-left: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 8px;
 }
 .title3{
     font-size: 14px;
-    padding-left: 6px;
+    font-weight: 600;
+    padding-left: 16px;
 }
 .title4{
     font-size: 13px;
-    padding-left: 9px;
+    font-weight: 500;
+    padding-left: 24px;
 }
 .title5{
     font-size: 12px;
-    padding-left: 12px;
+    font-weight: 500;
+    padding-left: 32px;
 }
 </style>

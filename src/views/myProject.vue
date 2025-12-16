@@ -43,12 +43,6 @@
                 <h2 class="mb-10 text-30 tracking-1">
                     催化数据库官网</h2>
                 <p class="mb-10">
-                    <span class="font-800">链接：</span>
-                    <a class="text-sky"
-                       href="http://47.100.213.227:9090"
-                       target="_blank">http://47.100.213.227:9090</a>
-                </p>
-                <p class="mb-10">
                     <span class="font-800">项目技术：</span>
                     vue3、vite、element
                     Plus、CryptoJS、echarts

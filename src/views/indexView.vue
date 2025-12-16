@@ -1,6 +1,5 @@
 <template>
   <full-page ref="fullpage" :options="options" id="fullpage">
-    <!-- 第一屏 -->
     <div class="section">
         <div class="h-full w-full relative overflow-hidden bg-black">
           <MyCanvas></MyCanvas>
@@ -25,12 +24,14 @@
       </div>
     </div>
 
-    <!-- 第二屏 -->
     <div class="section">
        <Introduction></Introduction>
     </div>
 
-    <!-- 第三屏 -->
+    <div class="section">
+      <AbilityOverview />
+    </div>
+
     <div class="section">
         <BeGoodAt></BeGoodAt>
     </div>
@@ -51,6 +52,8 @@ import Introduction
   from "@/components/Introduction.vue";
 import BeGoodAt
   from "@/components/BeGoodAt.vue";
+import AbilityOverview
+  from "@/components/AbilityOverview.vue";
 
 const fullpage = ref(null)
 

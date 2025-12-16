@@ -24,8 +24,18 @@ import './plugins/setRem'
 // 引入v-md-editor组件
 import VMdPreview from '@kangc/v-md-editor/lib/preview';
 import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
+import Prism from 'prismjs';
 import '@kangc/v-md-editor/lib/style/base-editor.css';
 import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
+// 导入 Prism.js 语言支持
+import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-markup';
+// 导入 Prism.js 样式（如果需要自定义样式）
+// import 'prismjs/themes/prism.css';
 
 // 路由配置引入
 import router from './router'
@@ -43,7 +53,9 @@ const app = createApp(App)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
 }
-VMdPreview.use(vuepressTheme);
+VMdPreview.use(vuepressTheme, {
+  Prism,
+});
 
 // 使用 Element Plus 和中文语言包
 app.use(ElementPlus, { locale: zhCn })

@@ -38,6 +38,9 @@ importers:
       pinia-plugin-persist:
         specifier: ^1.0.0
         version: 1.0.0(pinia@2.3.1(vue@3.5.13))(vue@3.5.13)
+      prismjs:
+        specifier: ^1.29.0
+        version: 1.29.0
       swiper:
         specifier: ^8.3.0
         version: 8.4.7
