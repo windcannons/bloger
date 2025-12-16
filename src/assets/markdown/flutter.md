@@ -42,7 +42,7 @@ q键: 退出调试预览模式。
 
 ## 项目安卓打包
 
-参考链接：https://www.jianshu.com/p/36c9de3c59ca
+参考链接：[Flutter Android 打包指南](https://www.jianshu.com/p/36c9de3c59ca)
 
 ### 第一步：用指令生成签名文件
 
@@ -52,9 +52,9 @@ terminal 执行下列命令：
 keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
 
-### 第二步：在项目的 android 目录下新建一个 key.properties 文件
+### 第二步：创建 key.properties 文件
 
-文件内容为：
+在项目的 `android` 目录下新建 `key.properties` 文件，内容为：
 
 ```properties
 # 创建 KEY 时输入的密钥库密码
@@ -70,9 +70,9 @@ keyAlias=keyname
 storeFile=D:/key.jks
 ```
 
-### 第三步：在 `/android/app/build.gradle` 文件中
+### 第三步：配置 build.gradle
 
-在 `android {` 这一行前面，加入如下代码：
+在 `android/app/build.gradle` 文件中，在 `android {` 这一行前面加入如下代码：
 
 ```gradle
 def keystorePropertiesFile = rootProject.file("key.properties")
@@ -115,7 +115,9 @@ buildTypes {
 }
 ```
 
-### 第五步：在 `android/app/src/main/AndroidManifest.xml` 中添加网络权限申请
+### 第五步：添加网络权限
+
+在 `android/app/src/main/AndroidManifest.xml` 中添加：
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
@@ -160,5 +162,5 @@ flutter build ios
 
 ### 常见问题
 
-- Mac 电脑环境异常时：https://blog.csdn.net/weixin_44385915/article/details/110008395
-- Flutter iOS 端 Module '...' not found（找不到插件）的问题解决：https://blog.csdn.net/llh_llh_/article/details/108272745
+- Mac 电脑环境异常时：[参考解决方案](https://blog.csdn.net/weixin_44385915/article/details/110008395)
+- Flutter iOS 端 Module '...' not found（找不到插件）的问题解决：[参考解决方案](https://blog.csdn.net/llh_llh_/article/details/108272745)
