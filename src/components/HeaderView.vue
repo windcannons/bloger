@@ -1,106 +1,106 @@
 <template>
-    <div class="h-64 bg-black shadow-[0px_8px_24px_rgba(149,_157,_165,_0.15)] fixed top-0 left-0 w-full z-99">
-        <div class="flex items-center justify-between w-1280 mx-a max-lg:w-full h-64 max-lg:px-50">
-            <div class="flex items-center cursor-pointer"
-                 @click="copyText('lc2717741632')">
-                <h1
-                        class="myName">
-                    Liu
-                    Chao
-                </h1>
-            </div>
-            <div class="flex items-center">
+  <div class="h-64 bg-black shadow-[0px_8px_24px_rgba(149,_157,_165,_0.15)] fixed top-0 left-0 w-full z-99">
+    <div class="flex items-center justify-between w-1280 mx-a max-lg:w-full h-64 max-lg:px-50">
+      <div class="flex items-center cursor-pointer"
+           @click="copyText('lc2717741632')">
+        <h1
+            class="myName">
+          Liu
+          Chao
+        </h1>
+      </div>
+      <div class="flex items-center">
+        <RouterLink
+            class="text-white text-18 mr-32 flex-shrink-0"
+            to="/">
+          自我介绍
+        </RouterLink>
+        <el-dropdown
+            placement="bottom">
+          <div
+              :class="{ 'router-link-active': isDocsActive }"
+              class="text-white text-18 mr-32 flex-shrink-0 cursor-pointer">
+            我的文档
+          </div>
+          <template
+              #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item>
                 <RouterLink
-                        class="text-white text-18 mr-32 flex-shrink-0"
-                        to="/">
-                    自我介绍
+                    class="block w-full h-full"
+                    :to="`/docs/vue`">
+                  vue
                 </RouterLink>
-                <el-dropdown
-                        placement="bottom">
-                    <div
-                        :class="{ 'router-link-active': isDocsActive }"
-                            class="text-white text-18 mr-32 flex-shrink-0 cursor-pointer">
-                        我的文档
-                    </div>
-                    <template
-                            #dropdown>
-                        <el-dropdown-menu>
-                            <el-dropdown-item>
-                                <RouterLink
-                                        class="block w-full h-full"
-                                        :to="`/docs/vue`">
-                                    vue
-                                </RouterLink>
-                            </el-dropdown-item>
-                            <el-dropdown-item>
-                                <RouterLink
-                                        class="block w-full h-full"
-                                        :to="`/docs/flutter`">
-                                    flutter
-                                </RouterLink>
-                            </el-dropdown-item>
-                            <el-dropdown-item>
-                                <RouterLink
-                                        class="block w-full h-full"
-                                        :to="`/docs/ArkTs`">
-                                    ArkTs
-                                </RouterLink>
-                            </el-dropdown-item>
-                            <el-dropdown-item>
-                                <RouterLink
-                                        class="block w-full h-full"
-                                        :to="`/docs/个人笔记`">
-                                    个人笔记
-                                </RouterLink>
-                            </el-dropdown-item>
-                        </el-dropdown-menu>
-                    </template>
-                </el-dropdown>
+              </el-dropdown-item>
+              <el-dropdown-item>
                 <RouterLink
-                    class="text-white text-18 mr-32 flex-shrink-0"
-                    :to="`/myProject`">
-                    开发项目
+                    class="block w-full h-full"
+                    :to="`/docs/flutter`">
+                  flutter
                 </RouterLink>
-                <!--<RouterLink-->
-                <!--    class="text-white text-18 mr-32 flex-shrink-0"-->
-                <!--    to="/">-->
-                <!--    我的工作-->
-                <!--</RouterLink>-->
-                <!--<RouterLink-->
-                <!--    class="text-white text-18 mr-32 flex-shrink-0"-->
-                <!--    :to="`/resume`">-->
-                <!--    我的简历-->
-                <!--</RouterLink>-->
-                <a href="/web前端 刘超 17581724627.pdf"
-                   target="_blank"
-                   class="text-white text-18 mr-32 flex-shrink-0">
-                    我的简历
-                </a>
-            </div>
-        </div>
+              </el-dropdown-item>
+              <el-dropdown-item>
+                <RouterLink
+                    class="block w-full h-full"
+                    :to="`/docs/ArkTs`">
+                  ArkTs
+                </RouterLink>
+              </el-dropdown-item>
+              <el-dropdown-item>
+                <RouterLink
+                    class="block w-full h-full"
+                    :to="`/docs/个人笔记`">
+                  个人笔记
+                </RouterLink>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+        <RouterLink
+            class="text-white text-18 mr-32 flex-shrink-0"
+            :to="`/myProject`">
+          开发项目
+        </RouterLink>
+        <!--<RouterLink-->
+        <!--    class="text-white text-18 mr-32 flex-shrink-0"-->
+        <!--    to="/">-->
+        <!--    我的工作-->
+        <!--</RouterLink>-->
+        <!--<RouterLink-->
+        <!--    class="text-white text-18 mr-32 flex-shrink-0"-->
+        <!--    :to="`/resume`">-->
+        <!--    我的简历-->
+        <!--</RouterLink>-->
+        <a href="/web前端 刘超 17581724627.pdf"
+           target="_blank"
+           class="text-white text-18 mr-32 flex-shrink-0">
+          我的简历
+        </a>
+      </div>
     </div>
+  </div>
 </template>
 
 <script
     setup>
 import {
-    computed,
-    onMounted
+  computed,
+  onMounted
 } from "vue";
 import bus
-    from "../bus";
+  from "../bus";
 import {
-    copyText,
+  copyText,
 } from "@/utils/utils.js";
 import {
-    useRoute
+  useRoute
 } from "vue-router";
 
 onMounted(() => {
-    // 接收全局事件总线
-    bus.on('msg', (val) => {
-        console.log('val', val);
-    })
+  // 接收全局事件总线
+  bus.on('msg', (val) => {
+    console.log('val', val);
+  })
 })
 const route = useRoute()
 

@@ -1,39 +1,39 @@
 <template>
   <full-page ref="fullpage" :options="options" id="fullpage">
     <div class="section">
-        <div class="h-full w-full relative overflow-hidden bg-black">
-          <MyCanvas></MyCanvas>
-          <div class="w-full h-full flex flex-col items-center justify-center relative z-99">
-            <img
-                src="@/assets/me.webp"
-                class="w-240 h-240 rounded-full mb-20"
-                alt="">
-            <h1 class="text-white mb-15 font-800 text-35 tracking-10">
-              刘超
-            </h1>
-            <p class="text-white tracking-1 text-16 h-24">
-              {{ userinfo }}
-            </p>
-          </div>
-          <div class="scroll-prompt absolute bottom-50 w-full text-center z-99999">
-            <img
-                class="scroll-icon w-28"
-                src="@/assets/down.png"
-                alt="">
-          </div>
+      <div class="h-full w-full relative overflow-hidden bg-black">
+        <MyCanvas></MyCanvas>
+        <div class="w-full h-full flex flex-col items-center justify-center relative z-99">
+          <img
+              src="@/assets/me.webp"
+              class="w-240 h-240 rounded-full mb-20"
+              alt="">
+          <h1 class="text-white mb-15 font-800 text-35 tracking-10">
+            刘超
+          </h1>
+          <p class="text-white tracking-1 text-16 h-24">
+            {{ userinfo }}
+          </p>
+        </div>
+        <div class="scroll-prompt absolute bottom-50 w-full text-center z-99999">
+          <img
+              class="scroll-icon w-28"
+              src="@/assets/down.png"
+              alt="">
+        </div>
       </div>
     </div>
 
     <div class="section">
-       <Introduction></Introduction>
+      <Introduction></Introduction>
     </div>
 
     <div class="section">
-      <AbilityOverview />
+      <AbilityOverview/>
     </div>
 
     <div class="section">
-        <BeGoodAt></BeGoodAt>
+      <BeGoodAt></BeGoodAt>
     </div>
   </full-page>
 

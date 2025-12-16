@@ -11,13 +11,13 @@
       </div>
       <div class="ability-grid">
         <div
-          v-for="(item, idx) in abilities"
-          :key="item"
-          :class="['ability-item', itemStateClass]"
-          :style="firstAnimationActive ? { animationDelay: `${idx * 120}ms` } : undefined">
+            v-for="(item, idx) in abilities"
+            :key="item"
+            :class="['ability-item', itemStateClass]"
+            :style="firstAnimationActive ? { animationDelay: `${idx * 120}ms` } : undefined">
           <span class="bullet"></span>
           <p class="desc">{{ item }}</p>
-          <span class="hover-glow" />
+          <span class="hover-glow"/>
         </div>
       </div>
     </div>
@@ -241,6 +241,7 @@ const abilities = [
     transform: scale(1.12);
   }
 }
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -289,7 +290,7 @@ const abilities = [
 .hover-glow {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(95,139,255,0.22), rgba(134,231,255,0.18), rgba(255,255,255,0));
+  background: linear-gradient(90deg, rgba(95, 139, 255, 0.22), rgba(134, 231, 255, 0.18), rgba(255, 255, 255, 0));
   transform: translateX(-100%);
   transition: transform 0.6s ease;
   pointer-events: none;

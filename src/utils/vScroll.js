@@ -73,9 +73,12 @@ export default {
     beforeUnmount(el) {
         const box = el;
         const img = el.querySelector('img');
-        box.removeEventListener('mouseenter', () => {});
-        box.removeEventListener('mouseleave', () => {});
-        img.removeEventListener('load', () => {});
+        box.removeEventListener('mouseenter', () => {
+        });
+        box.removeEventListener('mouseleave', () => {
+        });
+        img.removeEventListener('load', () => {
+        });
         cancelAnimationFrame(el.animationId); // 确保取消所有动画
     }
 };

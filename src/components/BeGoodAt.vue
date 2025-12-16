@@ -90,7 +90,7 @@
 <script
     setup>
 
-import { onMounted, onBeforeUnmount, ref } from "vue";
+import {onMounted, onBeforeUnmount, ref} from "vue";
 
 const offer = ref(null)
 const isVisible = ref(false)
@@ -259,9 +259,9 @@ onBeforeUnmount(() => {
           opacity: 0;
           transform: translateY(80px);
           transition: opacity 0.6s ease,
-                      transform 0.6s cubic-bezier(0.2, 0.7, 0.35, 1.3),
-                      box-shadow 0.2s ease,
-                      top 0.25s ease;
+          transform 0.6s cubic-bezier(0.2, 0.7, 0.35, 1.3),
+          box-shadow 0.2s ease,
+          top 0.25s ease;
           transition-delay: var(--enter-delay, 0s);
           cursor: pointer;
           position: relative;
@@ -307,12 +307,35 @@ onBeforeUnmount(() => {
   transform: translateY(0);
 }
 
-.offer.is-visible .content ul li:nth-child(1) { transition-delay: 0.05s; --enter-delay: 0.05s; }
-.offer.is-visible .content ul li:nth-child(2) { transition-delay: 0.15s; --enter-delay: 0.15s; }
-.offer.is-visible .content ul li:nth-child(3) { transition-delay: 0.25s; --enter-delay: 0.25s; }
-.offer.is-visible .content ul li:nth-child(4) { transition-delay: 0.35s; --enter-delay: 0.35s; }
-.offer.is-visible .content ul li:nth-child(5) { transition-delay: 0.45s; --enter-delay: 0.45s; }
-.offer.is-visible .content ul li:nth-child(6) { transition-delay: 0.55s; --enter-delay: 0.55s; }
+.offer.is-visible .content ul li:nth-child(1) {
+  transition-delay: 0.05s;
+  --enter-delay: 0.05s;
+}
+
+.offer.is-visible .content ul li:nth-child(2) {
+  transition-delay: 0.15s;
+  --enter-delay: 0.15s;
+}
+
+.offer.is-visible .content ul li:nth-child(3) {
+  transition-delay: 0.25s;
+  --enter-delay: 0.25s;
+}
+
+.offer.is-visible .content ul li:nth-child(4) {
+  transition-delay: 0.35s;
+  --enter-delay: 0.35s;
+}
+
+.offer.is-visible .content ul li:nth-child(5) {
+  transition-delay: 0.45s;
+  --enter-delay: 0.45s;
+}
+
+.offer.is-visible .content ul li:nth-child(6) {
+  transition-delay: 0.55s;
+  --enter-delay: 0.55s;
+}
 
 .offer.no-delay .content ul li {
   --enter-delay: 0s;

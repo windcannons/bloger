@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <div class="input-container">
-      <el-input v-model="newNote" placeholder="输入工作内容" @keyup.enter="addNote" />
+      <el-input v-model="newNote" placeholder="输入工作内容" @keyup.enter="addNote"/>
       <el-button class="ml-20" type="primary" @click="addNote">添加</el-button>
     </div>
 
@@ -27,10 +27,10 @@
           <el-button v-if="!week.summary" type="primary" @click="editWeekSummary(week)">编辑周总结</el-button>
           <div v-else class="summary-content">
             <span class="summary-text">{{ week.summary }}</span>
-           <div>
-             <el-button type="primary" @click="editWeekSummary(week)">编辑</el-button>
-             <el-button type="success" @click="copyWeekSummary(week)">复制</el-button>
-           </div>
+            <div>
+              <el-button type="primary" @click="editWeekSummary(week)">编辑</el-button>
+              <el-button type="success" @click="copyWeekSummary(week)">复制</el-button>
+            </div>
           </div>
         </template>
       </div>
@@ -54,8 +54,8 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, nextTick } from 'vue';
-import { ElMessage, ElMessageBox } from 'element-plus';
+import {ref, computed, onMounted, nextTick} from 'vue';
+import {ElMessage, ElMessageBox} from 'element-plus';
 
 const weeks = ref([]);
 const newNote = ref('');
@@ -80,14 +80,14 @@ const addNote = () => {
       if (latestNote && latestNote.date === today) {
         latestNote.content += `、${newNote.value}`;
       } else {
-        weeks.value[currentWeekIndex].notes.unshift({ content: newNote.value, date: today, isEditing: false });
+        weeks.value[currentWeekIndex].notes.unshift({content: newNote.value, date: today, isEditing: false});
       }
     } else {
       const [startDate, endDate] = getWeekDateRange();
       weeks.value.unshift({
         startDate,
         endDate,
-        notes: [{ content: newNote.value, date: today, isEditing: false }],
+        notes: [{content: newNote.value, date: today, isEditing: false}],
         summary: '',
         isEditingSummary: false
       });
