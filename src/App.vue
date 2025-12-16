@@ -49,7 +49,7 @@ onMounted(()=>{
     );
 
     console.log(
-        `%c🔧 技术栈：Vue, nuxt, Node.js, Webpack, CSS3, HTML5 🛠️`,
+        `%c🔧 技术栈：Vue, nuxt, Node.js, Webpack, unoCss 🛠️`,
         'color: #8BC34A; font-size: 16px; font-weight: normal; background-color: #C8E6C9; padding: 10px; border-radius: 8px;'
     );
 })
