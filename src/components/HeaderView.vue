@@ -15,50 +15,16 @@
             to="/">
           自我介绍
         </RouterLink>
-        <el-dropdown
-            placement="bottom">
-          <div
-              :class="{ 'router-link-active': isDocsActive }"
-              class="text-white text-18 mr-32 flex-shrink-0 cursor-pointer">
-            我的文档
-          </div>
-          <template
-              #dropdown>
-            <el-dropdown-menu>
-              <el-dropdown-item>
-                <RouterLink
-                    class="block w-full h-full"
-                    :to="`/docs/vue`">
-                  vue
-                </RouterLink>
-              </el-dropdown-item>
-              <el-dropdown-item>
-                <RouterLink
-                    class="block w-full h-full"
-                    :to="`/docs/flutter`">
-                  flutter
-                </RouterLink>
-              </el-dropdown-item>
-              <el-dropdown-item>
-                <RouterLink
-                    class="block w-full h-full"
-                    :to="`/docs/ArkTs`">
-                  ArkTs
-                </RouterLink>
-              </el-dropdown-item>
-              <el-dropdown-item>
-                <RouterLink
-                    class="block w-full h-full"
-                    :to="`/docs/个人笔记`">
-                  个人笔记
-                </RouterLink>
-              </el-dropdown-item>
-            </el-dropdown-menu>
-          </template>
-        </el-dropdown>
         <RouterLink
+            :class="{ 'router-link-active': isDocsActive }"
             class="text-white text-18 mr-32 flex-shrink-0"
-            :to="`/myProject`">
+            to="/docs">
+          我的文档
+        </RouterLink>
+        <RouterLink
+            :class="{ 'router-link-active': isProjectActive }"
+            class="text-white text-18 mr-32 flex-shrink-0"
+            to="/myProject">
           开发项目
         </RouterLink>
         <!--<RouterLink-->
@@ -105,6 +71,7 @@ onMounted(() => {
 const route = useRoute()
 
 const isDocsActive = computed(() => route.path.includes('/docs'))
+const isProjectActive = computed(() => route.path.includes('/myProject'))
 
 
 </script>

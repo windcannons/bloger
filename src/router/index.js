@@ -12,6 +12,11 @@ const router = createRouter({
             component: () => import('../views/indexView.vue')
         },
         {
+            path: '/docs',
+            name: 'docsList',
+            component: () => import('../views/docsList.vue')
+        },
+        {
             path: '/docs/:docType',
             name: 'docs',
             component: () => import('../views/docs.vue'),
@@ -19,9 +24,14 @@ const router = createRouter({
         },
         {
             path: '/myProject',
+            name: 'projectList',
+            component: () => import('../views/projectList.vue')
+        },
+        {
+            path: '/myProject/:projectType',
             name: 'myProject',
             component: () => import('../views/myProject.vue'),
-            props: true,
+            props: route => ({type: route.params.projectType})
         },
         //{
         //  path: '/',

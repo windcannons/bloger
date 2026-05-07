@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-#f5f5f5 docs h-100%">
+  <div class="bg-#f5f5f5 docs h-100vh">
     <div class="w-1440 mx-a flex h-100%">
       <el-scrollbar
           ref="tocScrollbar"
