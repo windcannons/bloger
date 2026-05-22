@@ -33,6 +33,11 @@ const router = createRouter({
             component: () => import('../views/myProject.vue'),
             props: route => ({type: route.params.projectType})
         },
+        {
+            path: '/mySoftware',
+            name: 'mySoftware',
+            component: () => import('../views/mySoftware.vue')
+        },
         //{
         //  path: '/',
         //  name: 'job',

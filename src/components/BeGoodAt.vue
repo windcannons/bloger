@@ -1,7 +1,7 @@
 <!--BeGoodAt-->
 <template>
   <div
-      class="offer pt-88"
+      class="offer pt-64 flex flex-col items-center justify-center"
       id="offer"
       ref="offer"
       :class="{'is-visible': isVisible, 'no-delay': noDelay}"

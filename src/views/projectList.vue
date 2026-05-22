@@ -31,7 +31,11 @@ const projects = ref([
 ]);
 
 const goToProject = (projectType) => {
-  router.push(`/myProject/${projectType}`);
+  if (projectType === 'software') {
+    router.push('/mySoftware');
+  } else {
+    router.push(`/myProject/${projectType}`);
+  }
 };
 </script>
 

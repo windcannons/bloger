@@ -1,7 +1,7 @@
 <!--Introduction-->
 <template>
   <div
-      class="bg-#ffffff h-888px flex items-center w-full overflow-hidden"
+      class="bg-#ffffff h-full flex items-center w-full overflow-hidden pt-64"
       :class="{'intro-anim': shouldAnimate, 'is-visible': isVisible}"
       ref="introWrap"
       :style="delayVars"
@@ -55,7 +55,7 @@
           名称：<span>刘超</span>
         </li>
         <li>
-          出生日期：<span>2001/03</span>
+          毕业日期：<span>2003/06/30</span>
         </li>
         <li>
           名族：<span>汉族</span>
@@ -78,7 +78,7 @@
           籍贯：<span>四川南充</span>
         </li>
         <li>
-          现居城市：<span>上海市嘉定区</span>
+          现居城市：<span>广州番禺区</span>
         </li>
       </ul>
       <ul
@@ -129,7 +129,6 @@
 
 <script
     setup>
-
 import {
   copyText
 } from "@/utils/utils.js";
@@ -211,7 +210,7 @@ onMounted(() => {
     [3, 10], // 前端开发工程师
     [13, 14] // 上海
   ])
-  longDescChunks.value = chunkText('我熟练掌握vue2、vue3、nuxt3等技术进行网站小程序以及应用程序的开发。有多个官网、大屏、小程序、app开发上架维护经验。我能够熟练使用npm与git进行项目的管理，熟练运用Sass、Less、unocss等CSS预处理器进行精准的样式定制，熟练使用nuxt3进行网站开发并针对SEO从多个角度进行优化。进行npm发布包实现快速构建uniapp、vue3、nuxt3项目；接口请求代码的自动生成；指令绑定本地代码与线上仓库；一键切换npm镜像等操作；针对不同框架进行组件、方法的可复用性封装实现项目的快速开发。', 10)
+  longDescChunks.value = chunkText('我熟练掌握vue2、vue3、nuxt2、nuxt3等技术进行网站小程序以及应用程序的开发。有多个官网、大屏、小程序、app开发上架维护经验。我能够熟练使用npm与git进行项目的管理，熟练运用Sass、Less、unocss等CSS预处理器进行精准的样式定制，熟练使用nuxt2和nuxt3进行网站开发并针对SEO从多个角度进行优化。进行npm发布包实现快速构建uniapp、vue3、nuxt3项目；接口请求代码的自动生成；指令绑定本地代码与线上仓库；一键切换npm镜像等操作；针对不同框架进行组件、方法的可复用性封装实现项目的快速开发。', 10)
   mottoChars.value = makeCharList('不断学习；不断提升！')
 
   // 检查 Pinia store 状态：true 表示已播放过（直接显示），false 表示需要执行动画
